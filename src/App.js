@@ -1,6 +1,9 @@
 import React, { useEffect } from "react";
 import { menu, keymap, baseKeymap } from "./editorComponents/editorMenu.js";
+import "./simpleEditor.css";
+
 import "./editor.css";
+
 import "./site.css";
 
 import { EditorState } from "prosemirror-state";
@@ -9,14 +12,9 @@ import { Schema, DOMParser } from "prosemirror-model";
 //replace these
 import { schema } from "prosemirror-schema-basic";
 import { addListNodes } from "prosemirror-schema-list";
-import { exampleSetup } from "prosemirror-example-setup";
 
 function App() {
     useEffect(() => {
-        const mySchema = new Schema({
-            nodes: addListNodes(schema.spec.nodes, "paragraph block*", "block"),
-            marks: schema.spec.marks,
-        });
         window.view = new EditorView(document.querySelector("#editor"), {
             state: EditorState.create({
                 doc: DOMParser.fromSchema(schema).parse(
