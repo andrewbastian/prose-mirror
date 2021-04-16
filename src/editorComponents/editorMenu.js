@@ -1,8 +1,6 @@
-import { EditorState, Plugin } from "prosemirror-state";
-import { EditorView } from "prosemirror-view";
+import { Plugin } from "prosemirror-state";
 import { baseKeymap } from "prosemirror-commands";
 import { keymap } from "prosemirror-keymap";
-import { DOMParser } from "prosemirror-model";
 import { toggleMark, setBlockType, wrapIn } from "prosemirror-commands";
 import { schema } from "prosemirror-schema-basic";
 
